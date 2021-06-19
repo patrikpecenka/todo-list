@@ -233,18 +233,6 @@ body {
   .textField{
     width: 16em;
   }
-
-}
-
-@media only screen and (min-width: 2560px) {
-  .itemContainer {
-      width: 30em;
-  }
-
-  .textField {
-    width: 32em;
-  }
-
 }
 
 
