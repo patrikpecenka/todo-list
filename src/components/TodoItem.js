@@ -1,5 +1,5 @@
 import React from "react"
-import { FcCancel, FcCheckmark } from "react-icons"
+import { FcCancel, FcCheckmark } from "react-icons/fc"
 
 const TodoItem = ({ itemObj, onDelete, onConfirm }) => (
 	<div className={`itemContainer ${itemObj.completed ? "itemCompleted" : ''}`} >
