@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import './Styles/App.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { FcPlus } from "react-icons/fc"
+import { FcPlus } from "react-icons"
 import TodoItems from "./components/TodoItems";
 
 const App = () => {
