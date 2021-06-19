@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { v4 as uuidv4 } from 'uuid';
+
 import './Styles/App.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -11,6 +12,7 @@ const App = () => {
 	const [currentItem, setCurrentItem] = useState('')
 	const [itemList, setItemList] = useState([])
 	const [status, setStatus] = useState('All')
+	const [title, setTitle] = useState("Today's tasks!")
 
 	//Local storage
 	useEffect(() => {
@@ -55,7 +57,19 @@ const App = () => {
 
 	const onDropDownChange = (e) => {
 		setStatus(e.target.value)
+		if (e.target.value === "All") {
+			return setTitle("Today's tasks!")
+		}
+		if (e.target.value === "Completed") {
+			return setTitle("Completed tasks")
+		}
+		if (e.target.value === "Uncompleted") {
+			return setTitle('Uncompleted tasks!')
+		}
 	}
+
+	
+
 	
 	return (
 		<main className="todoContainer">
@@ -63,7 +77,7 @@ const App = () => {
 			<div className="todoWrapper">
 
 				{/* Just "Today's task" title */}
-				<h1 className="todoTitle">Today's tasks!</h1>
+				<h1 className="todoTitle">{title}</h1>
 				
 				<div className={`inputContainer ${status === 'Completed' || status === 'Uncompleted' ? 'inputContainerGone' : ''}`}>
 					<input 
@@ -88,9 +102,9 @@ const App = () => {
 				<div className="bottomWrapper">
 				<button className="clearList" onClick={clearListHandler}>Clear List</button>
 					<select onChange={onDropDownChange} value={status} className="chooseTasks">
-						<option className="optionStyles" value="All">All</option>
-						<option className="optionStyles" value="Completed">Completed</option>
-						<option className="optionStyles" value="Uncompleted">Uncompleted</option>
+						<option className="optionStyles" value="All" >All</option>
+						<option className="optionStyles" value="Completed" >Completed</option>
+						<option className="optionStyles" value="Uncompleted" >Uncompleted</option>
 					</select>
 				</div>
 			</div>
