@@ -155,7 +155,7 @@ body {
 .completed {
   text-decoration: line-through;
   color: #5B5E60;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .itemCompleted {
@@ -163,12 +163,12 @@ body {
 }
 
 .confirmIconCompleted {
-  opacity: 30%;
+  opacity: 0.3;
   visibility: hidden;
 }
 
 .deleteIconCompleted {
-  opacity: 30%;
+  opacity: 0.3;
 }
 
 .bottomWrapper {
@@ -222,10 +222,6 @@ body {
   background-color: rgb(238, 71, 71);
   border: 2px solid rgb(238, 71, 71);
 }
-
-
-
-
 
 
 @media only screen and (max-width: 600px) {
